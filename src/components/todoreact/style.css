@@ -23,7 +23,7 @@ body {
   height: 100vh;
   color: #00ff00;
   font-size: 0.9rem;
-  opacity: 0.25;
+  opacity: 0.08;
   z-index: 0;
   pointer-events: none;
   display: flex;
@@ -237,4 +237,4 @@ body {
     font-size: 1.5rem;
   }
 }
-
+/* Dark Mode Enhancements */
