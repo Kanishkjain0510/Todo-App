@@ -190,7 +190,6 @@ body {
              blink 0.7s step-end infinite;
 }
 
-
 @keyframes typing {
   from {
     width: 0;
@@ -209,22 +208,45 @@ body {
   }
 }
 
-@keyframes disappear {
-  from {
-    width: 280px;
+/* Responsive for phones and small screens */
+@media screen and (max-width: 600px) {
+  .main_div {
+    padding: 25px;
+    margin: 60px auto 30px;
   }
-  to {
-    width: 0;
-  }
-}
 
-@keyframes resetFooter {
-  0%,
-  90% {
-    visibility: visible;
+  .addItems {
+    flex-direction: column;
+    gap: 15px;
   }
-  91%,
-  100% {
-    visibility: hidden;
+
+  .addItems input,
+  .addItems button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .eachItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .eachItem .item-text {
+    margin-right: 0;
+  }
+
+  .todo-btn {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .footer {
+    font-size: 0.9rem;
+  }
+
+  .terminal-title {
+    font-size: 1.5rem;
   }
 }
