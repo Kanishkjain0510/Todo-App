@@ -6,6 +6,25 @@ const getLocalData = () => {
   return lists ? JSON.parse(lists) : [];
 };
 
+const generateTerminalNoise = () => {
+  const commands = [
+    'ls -la', 'cd /usr/local/bin', 'ping google.com', 'top', 'cat config.yaml',
+    'nano todo.txt', 'sudo reboot', 'npm install', 'git status', 'rm -rf /tmp/*',
+    'echo "Hello, world!"', 'curl http://localhost:3000', 'chmod +x script.sh',
+    'htop', 'ps aux', 'grep "error" logs.txt', 'docker ps', 'df -h',
+    'whoami', 'mkdir new_folder', 'rmdir old_folder', 'touch notes.txt',
+    'scp file.txt user@host:/home/user', 'kill -9 1234', 'clear', 'history',
+    'alias ll="ls -la"', 'service nginx restart', 'yarn dev', 'npx create-react-app myApp'
+  ];
+
+  const lines = Array.from({ length: 300 }, (_, i) => {
+    const cmd = commands[Math.floor(Math.random() * commands.length)];
+    return <div key={i}>~ user@todo:~$ {cmd}</div>;
+  });
+
+  return lines;
+};
+
 const Todo = () => {
   const [inputdata, setInputData] = React.useState("");
   const [items, setItems] = React.useState(getLocalData());
@@ -57,14 +76,13 @@ const Todo = () => {
     localStorage.setItem("mytodolist", JSON.stringify(items));
   }, [items]);
 
-  // Generate terminal background "noise"
-  const terminalNoise = Array.from({ length: 100 }, (_, i) => (
-    `~ user@todo:~/tasks$ echo "line ${i + 1}"\n`
-  )).join('');
+  const terminalNoise = generateTerminalNoise();
 
   return (
     <>
-      <div className="terminal-noise">{terminalNoise}</div>
+      <div className="terminal-noise">
+        {terminalNoise}
+      </div>
 
       <div className="main_div">
         <div className="child_div">
