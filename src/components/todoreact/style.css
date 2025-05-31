@@ -185,21 +185,23 @@ body {
   white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid #00ff00;
-  animation: typing 3s steps(30, end) forwards, blink 0.7s step-end infinite,
-             disappear 3s steps(30, end) 4s forwards, resetFooter 9s infinite;
+  width: 0;
+  animation: typing 3s steps(30, end) 0s infinite alternate,
+             blink 0.7s step-end infinite;
 }
 
+
 @keyframes typing {
-  0% {
+  from {
     width: 0;
   }
-  100% {
+  to {
     width: 280px;
   }
 }
 
 @keyframes blink {
-  from, to {
+  0%, 100% {
     border-color: transparent;
   }
   50% {
