@@ -65,3 +65,7 @@ The production-ready files will be in the `build/` directory.
 ## License
 
 MIT License
+
+---
+
+**[🌐 View Live Demo](https://terminaltodo.netlify.app/)**  
