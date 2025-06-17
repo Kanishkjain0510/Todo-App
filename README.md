@@ -2,7 +2,7 @@
 
 A retro-themed, terminal-inspired Todo app built with React.
 
-![screenshot](build/images/todo.png)
+![screenshot](./public/images/todo.png)
 
 ## Features
 
